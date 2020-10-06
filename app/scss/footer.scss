@@ -1,0 +1,24 @@
+.footer__wrapper {
+    color: $second-color;
+    background-color: $bg-footer-color;
+    padding: 40px 0 ;
+}
+
+.footer__wrapper-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font14;
+    font-weight: $fThin-weight;
+    
+    @media  only screen and (max-width: 612px) {
+        display: block;
+        text-align: center;
+        font-size: $font10;
+        line-height: 2;
+    }
+    
+}
+
+.footer__text-bold {
+    font-weight: $fBold-weight;
+}
