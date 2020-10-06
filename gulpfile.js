@@ -10,6 +10,8 @@ var pngquant = require('imagemin-pngquant');
 var webp = require('gulp-webp');
 var browserSync = require('browser-sync').create();
 
+var ghPages = require('gulp-gh-pages');
+
 function sync(cb) {
     browserSync.init({
         server: {
@@ -114,6 +116,9 @@ function build(cb) {
 gulp.task('build', build);
 
 
-gulp.task('default', gulp.parallel(build, sync, watchFiles))
+gulp.task('default', gulp.parallel(build, sync, watchFiles));
 
-;
+gulp.task('deploy', function() {
+    return gulp.src('./build/**/*')
+      .pipe(ghPages());
+  });
